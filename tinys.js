@@ -1,7 +1,7 @@
 (function(){
-    var TNode = function(raw){
+    window.TNode = function(raw){
         this.raw = raw;
-        TNode.prototype.attr = function(attrName, val){
+        window.TNode.prototype.attr = function(attrName, val){
             if(!attrName)
                 return undefined;
             if(val)
@@ -33,10 +33,10 @@
             if(res instanceof HTMLCollection){
                 var tmp = [];
                 for(var i = 0; i < res.length;i ++)
-                    tmp[i] = new TNode(res[i]);
+                    tmp[i] = new window.TNode(res[i]);
                 res = tmp;
             } else
-                res = new TNode(res);
+                res = new window.TNode(res);
         }
         return res;
     };
